@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\RedAcademy_task_2.props" />
+</Project>

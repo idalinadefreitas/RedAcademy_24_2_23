@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\img\\LogoRedAcademy.png",
+      "PackagePath": "staticwebassets\\img\\LogoRedAcademy.png"
+    },
+    {
+      "Id": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
       "Id": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

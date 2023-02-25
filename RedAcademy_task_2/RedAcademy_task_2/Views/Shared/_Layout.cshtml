@@ -12,19 +12,44 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RedAcademy_task_2</a>
+                <img src="img/Logo.png" />
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+
+
+                         <button type="button" class="btn btn-primary m-1 pb-1 ">
+                        <li class="nav-item ">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Finantial"> <span class="square">2</span>Finantial</a>
+                            </li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                </svg>
+                        </button>
+                        
+                        <button type="button" class="btn btn-info m-1 pb-1">
+
+                            <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Assessament" asp-action="Index"> <span class="square_2">1</span>HR</a>
+                            </li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="color: white">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                        </svg>
+                        </button>   
+
+                        <button type="button" class="btn btn-danger m-1 pb-1">
+                            <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy"> <span class="square_3">2</span>Marketing</a>
+                            </li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                </svg>
+                        </button>
+
+
                     </ul>
                 </div>
             </div>
@@ -47,3 +72,33 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+<style>
+    .square {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #FDDA0D;
+        margin-right: 5px;
+        border-radius: 3px;
+    }
+
+    .square_2 {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        margin-right: 5px;
+        border-radius: 3px;
+    }
+
+    .square_3 {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+        margin-right: 5px;
+        border-radius: 3px;
+    }
+</style>

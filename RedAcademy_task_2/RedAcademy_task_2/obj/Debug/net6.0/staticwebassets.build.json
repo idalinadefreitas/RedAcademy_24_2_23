@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R23RGuCy5mEfrErysxxdKYP5z8INu3sD4veCSRjn/c8=",
+  "Hash": "bO2Ui9bgWyyqQ3QTF8A59dMcjL0SpiFsqQEobW89g60=",
   "Source": "RedAcademy_task_2",
   "BasePath": "_content/RedAcademy_task_2",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\img\\logo.png",
+      "SourceId": "RedAcademy_task_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\",
+      "BasePath": "_content/RedAcademy_task_2",
+      "RelativePath": "img/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
+    },
+    {
+      "Identity": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\img\\LogoRedAcademy.png",
+      "SourceId": "RedAcademy_task_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\",
+      "BasePath": "_content/RedAcademy_task_2",
+      "RelativePath": "img/LogoRedAcademy.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\LogoRedAcademy.png"
     },
     {
       "Identity": "C:\\RedAcademy\\RedAcademy_24_2_23\\RedAcademy_task_2\\RedAcademy_task_2\\wwwroot\\js\\site.js",

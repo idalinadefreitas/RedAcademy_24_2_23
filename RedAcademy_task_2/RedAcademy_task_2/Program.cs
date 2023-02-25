@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using RedAcademy_task_2.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MyDbContext>(options =>
+ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultContext")));
 
 var app = builder.Build();
 

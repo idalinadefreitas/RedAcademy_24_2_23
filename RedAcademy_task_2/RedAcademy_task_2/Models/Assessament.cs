@@ -38,6 +38,7 @@ namespace RedAcademy_task_2.Models
         [Required(ErrorMessage = "Fill in the Evaluation field")]
         [Range(1, 10, ErrorMessage = "The Evaluation field must be between 1 and 10")]
         [Display(Name = "Final Evaluation")]
+        public int FinalEvaluation { get; set; }
 
         public bool Active { get; set; }
     }

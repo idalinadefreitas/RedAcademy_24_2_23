@@ -10,7 +10,7 @@ namespace RedAcademy_task_2.Migrations
         {
             migrationBuilder.AddColumn<int>(
                 name: "FinalEvaluation",
-                table: "Assessaments",
+                table: "Assessments",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
@@ -20,7 +20,7 @@ namespace RedAcademy_task_2.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "FinalEvaluation",
-                table: "Assessaments");
+                table: "Assessments");
         }
     }
 }

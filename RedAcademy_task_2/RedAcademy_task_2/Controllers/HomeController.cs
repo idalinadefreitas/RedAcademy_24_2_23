@@ -23,6 +23,11 @@ namespace RedAcademy_task_2.Controllers
             return View();
         }
 
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
+
         public IActionResult Finantials()
         {
             return View();

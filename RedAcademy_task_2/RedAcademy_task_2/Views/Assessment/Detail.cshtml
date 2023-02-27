@@ -1,0 +1,36 @@
+﻿@model Assessment
+
+@{
+    ViewData["Title"] = "Details Assessment";
+}
+
+<partial name="_GeneralNotice" />
+
+<div class="card mx-auto" style="max-width: 1200px; margin-top: 100px;border: 1px solid #000">
+
+    <form asp-controller="Assessment" asp-action="Details">
+
+        <div class="card-header text-center">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+            <input type="hidden" asp-for="Id" />
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <table align="center" style="width:100%">
+                <tr>
+                    <td><b>Email:</b> @Html.DisplayFor(model => model.Title)</td>
+                    <td><b>Role:</b> @Html.DisplayFor(model => model.Employee)</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="card-footer text-center">
+            <a asp-controller="Assessment" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary btn-warning" style="width:120px; color: black;">Edit</a>
+            <a asp-controller="Assessment" asp-action="Index" class="btn btn-outline-secondary" style="width:120px">Cancel</a>
+        </div>
+    </form>
+
+
+</div>

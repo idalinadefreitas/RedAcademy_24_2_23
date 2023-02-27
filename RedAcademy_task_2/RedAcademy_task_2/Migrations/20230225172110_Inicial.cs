@@ -10,7 +10,7 @@ namespace RedAcademy_task_2.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Assessaments",
+                name: "Assessments",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -23,14 +23,14 @@ namespace RedAcademy_task_2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Assessaments", x => x.Id);
+                    table.PrimaryKey("PK_Assessments", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Assessaments");
+                name: "Assessments");
         }
     }
 }

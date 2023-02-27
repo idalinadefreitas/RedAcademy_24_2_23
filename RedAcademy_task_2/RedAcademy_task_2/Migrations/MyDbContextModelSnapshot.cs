@@ -22,7 +22,7 @@ namespace RedAcademy_task_2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("RedAcademy_task_2.Models.Assessament", b =>
+            modelBuilder.Entity("RedAcademy_task_2.Models.Assessment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,8 +44,8 @@ namespace RedAcademy_task_2.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FinalEvaluation")
-                        .HasColumnType("int");
+                    b.Property<float>("FinalEvaluation")
+                        .HasColumnType("real");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -57,7 +57,7 @@ namespace RedAcademy_task_2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Assessaments");
+                    b.ToTable("Assessments");
                 });
 #pragma warning restore 612, 618
         }

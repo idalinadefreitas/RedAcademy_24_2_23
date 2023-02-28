@@ -12,5 +12,6 @@ namespace RedAcademy_task_2.Data
         }
 
         public DbSet<Assessment> Assessments { get; set; }
+        public DbSet<Marketing> Marketings { get; set; }
     }
 }

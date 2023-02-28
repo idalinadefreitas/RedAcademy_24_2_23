@@ -5,6 +5,7 @@ using RedAcademy_task_2.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -12,6 +13,7 @@ builder.Services.AddDbContext<AppIdentityContext>(options =>
  options.UseSqlServer(builder.Configuration.GetConnectionString("AspNetIdentityContextConnection")));
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppIdentityContext>();
 
 builder.Services.AddRazorPages();

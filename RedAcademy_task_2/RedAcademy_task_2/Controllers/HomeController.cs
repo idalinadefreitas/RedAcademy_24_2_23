@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RedAcademy_task_2.Models;
 
@@ -18,6 +19,7 @@ namespace RedAcademy_task_2.Controllers
             return View();
         }
 
+        
         public IActionResult Privacy()
         {
             return View();
@@ -28,7 +30,7 @@ namespace RedAcademy_task_2.Controllers
             return View();
         }
 
-        public IActionResult Finantials()
+        public IActionResult Dashboard_marketing()
         {
             return View();
         }

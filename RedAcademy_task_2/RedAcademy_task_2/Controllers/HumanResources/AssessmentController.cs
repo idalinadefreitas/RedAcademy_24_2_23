@@ -1,11 +1,13 @@
 ﻿using System.Reflection.Metadata;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using RedAcademy_task_2.Areas.Identity.Data;
 using RedAcademy_task_2.Data;
 using RedAcademy_task_2.Models;
 
 namespace RedAcademy_task_2.Controllers.HumanResources
 {
+    [Authorize]
     public class AssessmentController : Controller
     {
         private readonly AppIdentityContext _context;
@@ -14,6 +16,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             _context = context;
         }
 
+        //[ClaimsAuthorize("Assessment", "List")]
         [HttpGet]
         public IActionResult Index([FromQuery] string filter = null, [FromQuery] string query = null)
         {
@@ -37,6 +40,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
 
         }
 
+        //[ClaimsAuthorize("Assessment", "Add")]
         [HttpGet]
         [Route("Add")]
         public IActionResult Add()
@@ -63,9 +67,10 @@ namespace RedAcademy_task_2.Controllers.HumanResources
 
         }
 
+        //[ClaimsAuthorize("Assessment", "Detail")]
         [HttpGet]
         [Route("Detail")]
-        public IActionResult Details(Guid id)
+        public IActionResult Detail(Guid id)
         {
             var assessment = _context.Assessments.FirstOrDefault(f => f.Id == id);
 
@@ -75,7 +80,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             return View(assessment);
         }
 
-
+        //[ClaimsAuthorize("Assessment", "Edit")]
         [Route("edit-assessment/{id:guid}")]
         [HttpGet]
         public IActionResult Edit(Guid id)
@@ -88,7 +93,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             return View(assessment);
         }
 
-        [Route("edit-assessment/{id:guid}")]
+        //[Route("edit-assessment/{id:guid}")]
         [HttpPost]
         public IActionResult Edit(Guid id, Assessment assessment)
         {
@@ -106,6 +111,19 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             return RedirectToAction("Index");
         }
 
+        [Route("delete-assessment/{id:guid}")]
+        [HttpGet]
+        public IActionResult Delete(Guid id)
+        {
+            var assessment = _context.Assessments.FirstOrDefault(f => f.Id == id);
+
+            if (GetAssessmentById(id) == null)
+                return RedirectToAction("Index");
+
+            return View(assessment);
+        }
+
+        //[ClaimsAuthorize("Assessment", "Delete")]
         [Route("delete-assessment/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         public IActionResult Delete(Assessment assessment)

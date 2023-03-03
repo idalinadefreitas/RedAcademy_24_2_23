@@ -64,8 +64,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Goal/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29hbFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Goal/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29hbFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Goal/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29hbFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Goal/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29hbFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Goal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29hbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Home/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Home/Dashboard_finantial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmRfZmluYW50aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Home/Dashboard_marketing.cshtml]
@@ -102,6 +126,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Marketing/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0aW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Payment/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Payment/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Payment/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Payment/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Payment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/RedAcademy/RedAcademy_24_2_23/RedAcademy_task_2/RedAcademy_task_2/Views/Shared/Error.cshtml]

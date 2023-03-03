@@ -6,7 +6,7 @@
 
 <div class="card mx-auto" style="max-width: 1200px; margin-top: 100px;border: 1px solid #000">
 
-    <form asp-controller="Assessment" asp-action="Delete">
+    <form asp-controller="Marketing" asp-action="Delete">
 
         <div class="card-header text-center">
             <h2>@ViewData["Title"]</h2>
@@ -18,10 +18,7 @@
             <table align="center" style="width:100%">
                 <tr>
                     <td><b>Title:</b> @Html.DisplayFor(model => model.Title)</td>
-                    <td><b>Employee:</b> @Html.DisplayFor(model => model.Employee)</td>
                     <td><b>Description:</b> @Html.DisplayFor(model => model.Description)</td>
-                    <td><b>Start Date:</b> @Html.DisplayFor(model => model.StartDate)</td>
-                    <td><b>End Date:</b> @Html.DisplayFor(model => model.EndDate)</td>
                 </tr>
             </table>
         </div>

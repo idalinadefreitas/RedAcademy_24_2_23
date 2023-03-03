@@ -1,20 +1,19 @@
-﻿@model Assessment
+﻿@model Marketing
 
 @{
-    ViewData["Title"] = "Edit Assessment";
+    ViewData["Title"] = "Edit Marketing";
 }
 
 <partial name="_GeneralNotice" />
 
 <div class="card mx-auto" style="max-width: 600px; margin-top: 100px;border: 1px solid #000">
 
-    <form asp-controller="Assessment" asp-action="Edit">
+    <form asp-controller="Marketing" asp-action="Edit">
 
         <div class="card-header text-center">
             <h2>@ViewData["Title"]</h2>
         </div>
         <div class="card-body">
-            <input type="hidden" asp-for="Id" />
 
             <div asp-validation-summary="All" class="text-danger"></div>
 
@@ -25,54 +24,69 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="Employee" class="form-label"></label>
-                <input asp-for="Employee" class="form-control" />
-                <span asp-validation-for="Employee" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
                 <label asp-for="Description" class="form-label"></label>
-                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
+            <div class="form-group">
+                <label asp-for="Image" class="form-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
             <div class="row align-items-center" style="padding-top: 20px;">
                 <div class="col-lg-6">
-                    <label asp-for="StartDate" class="form-label"></label>
-                    <input asp-for="StartDate" class="form-control" />
-                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                    <label asp-for="CreateDate" class="form-label"></label>
+                    <input asp-for="CreateDate" class="form-control" />
+                    <span asp-validation-for="CreateDate" class="text-danger"></span>
                 </div>
                 <div class="col-lg-6">
-                    <label asp-for="EndDate" class="form-label"></label>
-                    <input asp-for="EndDate" class="form-control" />
-                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                    <label asp-for="FinishDate" class="form-label"></label>
+                    <input asp-for="FinishDate" class="form-control" />
+                    <span asp-validation-for="FinishDate" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="row align-items-center" style="padding-top: 20px;">
                 <div class="col-lg-6">
-                    <label asp-for="FinalEvaluation" class="form-label"></label>
-                    <input asp-for="FinalEvaluation" id="FinalEvaluation" class="custom-range" type="range" min="0" step="0.5" max="5" slider-tooltip="show"  />
-                    <span asp-validation-for="FinalEvaluation" class="text-danger"></span>
+                    <label asp-for="Columnist" class="form-label"></label>
+                    <select input asp-for="Columnist" asp-items="Html.GetEnumSelectList<RedAcademy>()" class="form-control form-select">
+                    </select>
+                    <span asp-validation-for="Columnist" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="Category" class="form-label"></label>
+                    <select input asp-for="Category" asp-items="Html.GetEnumSelectList<CategoryNews>()" class="form-control form-select">
+                    </select>
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center" style="padding-top: 20px;">
+                <div class="col-lg-6">
+                    <label asp-for="TimetoRead" class="form-label"></label>
+                    <input asp-for="TimetoRead" id="FinalEvaluation" class="custom-range" type="range" min="0" step="0.5" max="5" slider-tooltip="show" />
+                    <span asp-validation-for="TimetoRead" class="text-danger"></span>
                 </div>
 
-                <div class= "col-lg-3">
+                <div class="col-lg-3">
                 </div>
 
                 <div class="col-lg-3">
                     <label asp-for="Active" class=" form-check-label"></label>
-                        <label class="switch">
-                            <input asp-for="Active" type="checkbox" checked>
-                    <span class="slider round"></span>
+                    <label class="switch">
+                        <input asp-for="Active" type="checkbox" checked>
+                        <span class="slider round"></span>
                     </label>
                 </div>
             </div>
 
-
         </div>
         <div class="card-footer text-center">
-            <input type="submit" value="Edit" class="btn btn-primary btn-warning" style="width:120px; color: black;" />
-            <a asp-controller="Assessment" asp-action="Index" class="btn btn-outline-secondary" style="width:120px">Cancel</a>
+            <input type="submit" value="Add" class="btn btn-primary" style="width:120px; background-color: #4CAF50" />
+            <a asp-controller="Marketing" asp-action="Index" class="btn btn-outline-secondary" style="width:120px">Cancel</a>
         </div>
     </form>
 

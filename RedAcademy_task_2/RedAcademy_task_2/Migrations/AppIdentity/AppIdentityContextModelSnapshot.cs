@@ -262,6 +262,47 @@ namespace RedAcademy_task_2.Migrations.AppIdentity
                     b.ToTable("Assessments");
                 });
 
+            modelBuilder.Entity("RedAcademy_task_2.Models.Goal", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Employee")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float>("FinalEvaluation")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Goals");
+                });
+
             modelBuilder.Entity("RedAcademy_task_2.Models.Marketing", b =>
                 {
                     b.Property<Guid>("Id")
@@ -270,6 +311,12 @@ namespace RedAcademy_task_2.Migrations.AppIdentity
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
+
+                    b.Property<int>("Category")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Columnist")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -284,8 +331,7 @@ namespace RedAcademy_task_2.Migrations.AppIdentity
 
                     b.Property<string>("Image")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("TimetoRead")
                         .HasColumnType("real");
@@ -298,6 +344,67 @@ namespace RedAcademy_task_2.Migrations.AppIdentity
                     b.HasKey("Id");
 
                     b.ToTable("Marketings");
+                });
+
+            modelBuilder.Entity("RedAcademy_task_2.Models.Payment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("BaseSalaryValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("CostCenter")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<decimal>("DisplacementValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("InsuranceValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MealValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MonthlyIRSValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PaymentType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("SocialSecurityValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("TotalLiquid")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -21,4 +21,6 @@ public class AppIdentityContext : IdentityDbContext<IdentityUser>
     }
     public DbSet<Assessment> Assessments { get; set; }
     public DbSet<Marketing> Marketings { get; set; }
+    public DbSet<Payment> Payments { get; set; }
+    public DbSet<Goal> Goals { get; set; }
 }

@@ -1,5 +1,6 @@
-﻿
-@model IEnumerable<RedAcademy_task_2.Models.Assessment>
+﻿@using RedAcademy_task_2.Models
+@model PagedViewModel<Assessment>
+
 @{
     ViewData["Title"] = "List Assessment";
 }
@@ -78,7 +79,7 @@ img {
                 <tbody>
                     @if (Model != null)
                     {
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.List)
 
                         {
                             <tr style="vertical-align:middle;height:20px">
@@ -171,8 +172,26 @@ img {
                         }
 
                     }
+                    
                 </tbody>
 
             </table>
+            <nav>
+                <ul class="pagination justify-content-center">
+                    @{
+                        for (var i = 1; i < Model.TotalPages + 1; i++)
+                        {
+                            if (i == Model.PageIndex)
+                            {
+                                <li class="page-item active"><a class="page-link" asp-action="@Model.ReferenceAction" asp-route-page="@i" asp-route-ps="@Model.PageSize" asp-route-q="@Model.Query">@i <span class="sr-only"></span></a></li>
+                            }
+                            else
+                            {
+                                <li class="page-item"><a class="page-link" asp-action="@Model.ReferenceAction" asp-route-ps="@Model.PageSize" asp-route-page="@i" asp-route-q="@Model.Query">@i</a></li>
+                            }
+                        }
+                    }
+                </ul>
+            </nav>
     </div>
 </div>

@@ -276,3 +276,6 @@ C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\n
 C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\obj\Debug\net6.0\RedAcademy_task_2.MvcApplicationPartsAssemblyInfo.cs
 C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\PagedList.dll
+C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\PagedList.Mvc.dll
+C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\Dapper.dll

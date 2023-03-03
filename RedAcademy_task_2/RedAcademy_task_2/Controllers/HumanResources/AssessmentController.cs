@@ -4,6 +4,11 @@ using Microsoft.AspNetCore.Authorization;
 using RedAcademy_task_2.Areas.Identity.Data;
 using RedAcademy_task_2.Data;
 using RedAcademy_task_2.Models;
+using PagedList;
+using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Dapper;
 
 namespace RedAcademy_task_2.Controllers.HumanResources
 {
@@ -11,45 +16,44 @@ namespace RedAcademy_task_2.Controllers.HumanResources
     public class AssessmentController : Controller
     {
         private readonly AppIdentityContext _context;
+ 
+
         public AssessmentController(AppIdentityContext context)
         {
             _context = context;
         }
 
-        //[ClaimsAuthorize("Assessment", "List")]
+        [ClaimsAuthorize("Assessment", "List")]
         [HttpGet]
-        public IActionResult Index([FromQuery] string filter = null, [FromQuery] string query = null)
+        public IActionResult Index([FromQuery] int ps = 5, [FromQuery] int page = 1, [FromQuery] string filter = null, [FromQuery] string query = null)
         {
 
             //PopulateDatabase();
 
             // var assessmentsList = _context.Assessments; //Receives Assessment list
 
-            // return View(assessmentsList.ToList().OrderBy(c => c.Id)); //returns list ordered by id
+            //return View(assessmentsList.ToList().OrderBy(c => c.Id)); //returns list ordered by id
 
-
-            var assessments = GetAssessment(filter, query);
+            var assessments = GetAssessments(ps, page, filter, query);
+            //var assessments = GetAssessment(filter, query).ToList();
 
             ViewBag.Search = query;
             ViewBag.Filter = filter;
-
-            // if (!string.IsNullOrEmpty(query))
-              //  Alert("The search for '" + query + "' by the '" + filter + "' was successful!", TypeAlert.info);
 
             return View(assessments);
 
         }
 
-        //[ClaimsAuthorize("Assessment", "Add")]
+        [ClaimsAuthorize("Assessment", "Add")]
         [HttpGet]
-        [Route("Add")]
+        [Route("Add-Assessment")]
         public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
-        [Route("Add")]
+        [Route("Add-Assessment")]
         public IActionResult Add(Assessment assessment)
         {
             if (!ModelState.IsValid)
@@ -67,7 +71,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
 
         }
 
-        //[ClaimsAuthorize("Assessment", "Detail")]
+        [ClaimsAuthorize("Assessment", "Detail")]
         [HttpGet]
         [Route("Detail")]
         public IActionResult Detail(Guid id)
@@ -80,7 +84,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             return View(assessment);
         }
 
-        //[ClaimsAuthorize("Assessment", "Edit")]
+        [ClaimsAuthorize("Assessment", "Edit")]
         [Route("edit-assessment/{id:guid}")]
         [HttpGet]
         public IActionResult Edit(Guid id)
@@ -93,7 +97,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             return View(assessment);
         }
 
-        //[Route("edit-assessment/{id:guid}")]
+        [Route("edit-assessment/{id:guid}")]
         [HttpPost]
         public IActionResult Edit(Guid id, Assessment assessment)
         {
@@ -111,6 +115,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             return RedirectToAction("Index");
         }
 
+        [ClaimsAuthorize("Assessment", "Delete")]
         [Route("delete-assessment/{id:guid}")]
         [HttpGet]
         public IActionResult Delete(Guid id)
@@ -123,7 +128,6 @@ namespace RedAcademy_task_2.Controllers.HumanResources
             return View(assessment);
         }
 
-        //[ClaimsAuthorize("Assessment", "Delete")]
         [Route("delete-assessment/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         public IActionResult Delete(Assessment assessment)
@@ -215,6 +219,31 @@ namespace RedAcademy_task_2.Controllers.HumanResources
 
             };
             return assessments;
+        }
+
+        private PagedViewModel<Assessment> GetAssessments(int pageSize, int pageIndex, string filter = null, string query = null)
+        {
+            var sql = @$"SELECT * FROM Assessments
+                      WHERE (@Title IS NULL OR Title LIKE '%' + @Title + '%') 
+                      ORDER BY [Title] 
+                      OFFSET {pageSize * (pageIndex - 1)} ROWS 
+                      FETCH NEXT {pageSize} ROWS ONLY 
+                      SELECT COUNT(Id) FROM Assessments 
+                      WHERE (@Title IS NULL OR Title LIKE '%' + @Title + '%')"; var multi = _context.Database.GetDbConnection()
+            .QueryMultiple(sql, new { Title = query }); var assessments = multi.Read<Assessment>();
+            var total = multi.Read<int>().FirstOrDefault(); 
+            
+            return new PagedViewModel<Assessment>()
+
+            {
+                ReferenceAction = "Index",
+                List = assessments,
+                TotalResults = total,
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                Filter = filter,
+                Query = query
+            };
         }
     }
 }

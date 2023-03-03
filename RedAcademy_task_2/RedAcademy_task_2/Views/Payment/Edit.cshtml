@@ -1,0 +1,111 @@
+﻿@model Payment
+
+@{
+    ViewData["Title"] = "Edit Payment";
+}
+
+<partial name="_GeneralNotice" />
+
+<div class="card mx-auto" style="max-width: 600px; margin-top: 100px;border: 1px solid #000">
+
+    <form asp-controller="Payment" asp-action="Edit">
+
+        <div class="card-header text-center">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+
+            <div class="row align-items-center" style="padding-top: 20px;">
+                <div class="col-lg-6">
+                    <label asp-for="PaymentType" class="form-label"></label>
+                    <select input asp-for="PaymentType" asp-items="Html.GetEnumSelectList<PaymentTypeEnum>()" class="form-control form-select">
+                    </select>
+                    <span asp-validation-for="PaymentType" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6 " form-group">
+                    <label asp-for="CostCenter" class="form-label"></label>
+                    <input asp-for="CostCenter" class="form-control" />
+                    <span asp-validation-for="CostCenter" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row align-items-center" style="padding-top: 20px;">
+                <div class="col-lg-6">
+                    <label asp-for="BaseSalaryValue" class="form-label"></label>
+                    <input asp-for="BaseSalaryValue" class="form-control">
+                    <span asp-validation-for="BaseSalaryValue" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6 " form-group">
+                    <label asp-for="InsuranceValue" class="form-label"></label>
+                    <input asp-for="InsuranceValue" class="form-control" />
+                    <span asp-validation-for="InsuranceValue" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row align-items-center" style="padding-top: 20px;">
+                <div class="col-lg-6">
+                    <label asp-for="MealValue" class="form-label"></label>
+                    <input asp-for="MealValue" class="form-control" />
+                    <span asp-validation-for="MealValue" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6 " form-group">
+                    <label asp-for="DisplacementValue" class="form-label"></label>
+                    <input asp-for="DisplacementValue" class="form-control" />
+                    <span asp-validation-for="DisplacementValue" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row align-items-center" style="padding-top: 20px;">
+                <div class="col-lg-6">
+                    <label asp-for="MonthlyIRSValue" class="form-label"></label>
+                    <input asp-for="MonthlyIRSValue" class="form-control" />
+                    <span asp-validation-for="MonthlyIRSValue" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6 " form-group">
+                    <label asp-for="SocialSecurityValue" class="form-label"></label>
+                    <input asp-for="SocialSecurityValue" class="form-control" />
+                    <span asp-validation-for="SocialSecurityValue" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <label asp-for="Active" class=" form-check-label"></label>
+                <label class="switch">
+                    <input asp-for="Active" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+
+        </div>
+        <div class="card-footer text-center">
+            <input type="submit" value="Add" class="btn btn-primary" style="width:120px; background-color: #4CAF50" />
+            <a asp-controller="Payment" asp-action="Index" class="btn btn-outline-secondary" style="width:120px">Cancel</a>
+        </div>
+    </form>
+
+
+</div>
+
+
+@*@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}*@

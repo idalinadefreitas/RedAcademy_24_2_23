@@ -1,0 +1,54 @@
+﻿@model Payment
+
+@{
+    ViewData["Title"] = "Delete Payment";
+}
+
+<div class="card mx-auto" style="max-width: 1200px; margin-top: 100px;border: 1px solid #000">
+
+    <form asp-controller="Payment" asp-action="Delete">
+
+        <div class="card-header text-center">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+            <input type="hidden" asp-for="Id" />
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <table align="center" style="width:100%">
+                <tr>
+                    <td><b>Title:</b> @Html.DisplayFor(model => model.Title)</td>
+                    <td><b>Description:</b> @Html.DisplayFor(model => model.Description)</td>
+                    <td><b>Payment Type:</b> @Html.DisplayFor(model => model.PaymentType)</td>
+                    <td><b>Cost Center:</b> @Html.DisplayFor(model => model.CostCenter)</td>
+                    <td><b>Payment Date:</b> @Html.DisplayFor(model => model.PaymentDate)</td>
+                    <td><b>Base Salary Value:</b> @Html.DisplayFor(model => model.BaseSalaryValue)</td>
+                    <td><b>Insurance Value:</b> @Html.DisplayFor(model => model.InsuranceValue)</td>
+                    <td><b>Meal Value:</b> @Html.DisplayFor(model => model.MealValue)</td>
+                    <td><b>Displacement Value:</b> @Html.DisplayFor(model => model.DisplacementValue)</td>
+                    <td><b>Total Liquid:</b> @Html.DisplayFor(model => model.TotalLiquid)</td>
+                    <td><b>Monthly IRS Value:</b> @Html.DisplayFor(model => model.MonthlyIRSValue)</td>
+                    <td><b>Social Security Value:</b> @Html.DisplayFor(model => model.SocialSecurityValue)</td>
+                    <td><b>Total:</b> @Html.DisplayFor(model => model.Total)</td>
+                    <td><b>Active:</b> @Html.DisplayFor(model => model.Active)</td>
+
+                </tr>
+            </table>
+        </div>
+
+        <div class="card-footer text-center">
+            <input type="submit" value="Delete" class="btn btn-danger" style="width:120px">
+            <a asp-controller="Payment" asp-action="Index" class="btn btn-outline-secondary" style="width:120px">Cancel</a>
+        </div>
+    </form>
+
+
+</div>
+
+
+@*@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}*@

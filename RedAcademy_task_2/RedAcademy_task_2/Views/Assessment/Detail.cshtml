@@ -19,8 +19,12 @@
             <div asp-validation-summary="All" class="text-danger"></div>
             <table align="center" style="width:100%">
                 <tr>
-                    <td><b>Email:</b> @Html.DisplayFor(model => model.Title)</td>
-                    <td><b>Role:</b> @Html.DisplayFor(model => model.Employee)</td>
+                    <td><b>Title:</b> @Html.DisplayFor(model => model.Title)</td>
+                    <td><b>Description:</b> @Html.DisplayFor(model => model.Description)</td>
+                    <td><b>Start Date:</b> @Html.DisplayFor(model => model.StartDate)</td>
+                    <td><b>End Date:</b> @Html.DisplayFor(model => model.EndDate)</td>
+                    <td><b>Final Evaluation:</b> @Html.DisplayFor(model => model.FinalEvaluation)</td>
+                    <td><b>Active:</b> @Html.DisplayFor(model => model.Active)</td>
                 </tr>
             </table>
         </div>

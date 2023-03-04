@@ -7,25 +7,28 @@
 
 @section Scripts{
     <script>
-        function callfunctiomTotalLiquid() {
-            var elementValue = Number(document.getElementById("DisplacementValue").value) +
-                Number(document.getElementById("MealValue").value) +
-                Number(document.getElementById("InsuranceValue").value) +
-                Number(document.getElementById("BaseSalaryValue").value) +
+        document.getElementById("BaseSalaryValue").addEventListener("blur", myTotalLiquid);
+        document.getElementById("InsuranceValue").addEventListener("blur", myTotalLiquid);
+        document.getElementById("MealValue").addEventListener("blur", myTotalLiquid);
+        document.getElementById("DisplacementValue").addEventListener("blur", myTotalLiquid); 
+        document.getElementById("MonthlyIRSValue").addEventListener("blur", myTotal);
+        document.getElementById("SocialSecurityValue").addEventListener("blur", myTotal); 
 
-                document.getElementById("TotalLiquid").value = elementValue;
-            )
+        function myTotalLiquid() {
+            var s1 = document.getElementById("BaseSalaryValue").value;
+            var s2 = document.getElementById("InsuranceValue").value;
+            var s3 = document.getElementById("MealValue").value;
+            var s4 = document.getElementById("DisplacementValue").value;
+            var sTotalLiquid = (parseInt(s1) + parseInt(s2) + parseInt(s3) + parseInt(s4));
+            document.getElementById("TotalLiquid").value = sTotalLiquid;
 
-            function callfunctiomTotal() {
-                var elementValue = Number(document.getElementById("TotalLiquid").value) -
-                    (Number(document.getElementById("MonthlyIRSValue").value) +
-                        Number(document.getElementById("SocialSecurityValue").value));
-
-                document.getElementById("Total").value = elementValue;
-                    )
-
-            }
-    </script>
+        } function myTotal() {
+            var d1 = document.getElementById("MonthlyIRSValue").value;
+            var d2 = document.getElementById("SocialSecurityValue").value;
+            var dTotalLiquid = document.getElementById("TotalLiquid").value;
+            var dTotal = (parseInt(dTotalLiquid) - (parseInt(d1) + parseInt(d2)));
+            document.getElementById("Total").value = dTotal;
+        }</script>
 }
 
 <partial name="_GeneralNotice" />
@@ -108,11 +111,11 @@
             <div class="row align-items-center" style="padding-top: 20px;">
                 <div class="col-lg-6">
                     <label asp-for="TotalLiquid" class="form-label"></label>
-                    <input asp-for="TotalLiquid" class="form-control" readonly onchange="callfunctiomTotalLiquid()" />
+                    <input asp-for="TotalLiquid" class="form-control" readonly />
                 </div>
                 <div class="col-lg-6 form-group">
                     <label asp-for="Total" class="form-label"></label>
-                    <input asp-for="Total" class="form-control" readonly onchange="callfunctionTotal()" />
+                    <input asp-for="Total" class="form-control" readonly />
                 </div>
             </div>
 

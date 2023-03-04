@@ -279,3 +279,5 @@ C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\n
 C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\PagedList.dll
 C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\PagedList.Mvc.dll
 C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\Dapper.dll
+C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\appsettings.Production.json
+C:\RedAcademy\RedAcademy_24_2_23\RedAcademy_task_2\RedAcademy_task_2\bin\Debug\net6.0\appsettings.Staging.json

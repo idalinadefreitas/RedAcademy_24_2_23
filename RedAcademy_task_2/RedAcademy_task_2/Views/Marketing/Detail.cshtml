@@ -19,7 +19,35 @@
             <div asp-validation-summary="All" class="text-danger"></div>
             <table align="center" style="width:100%">
                 <tr>
-                    <td><b>Email:</b> @Html.DisplayFor(model => model.Title)</td>
+                    <td rowspan="5">
+                        <img src=@Html.DisplayFor(model => model.Image) style="display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            border-radius: 70%;" width="100" height="100" />
+                    <td><b>Title:</b> @Html.DisplayFor(model => model.Title)</td>
+                    <td><b>Description:</b> @Html.DisplayFor(model => model.Description)</td>
+                </tr>
+                <tr>
+                    <td><b>Columnist:</b></td>
+                    <td>@Html.DisplayFor(model => model.Columnist)</td>
+                </tr>
+                <tr>
+                    <td><b>Category:</b></td>
+                    <td>@Html.DisplayFor(model => model.Category)</td>
+                </tr>
+                <tr>
+                    <td><b>Start Date:</b></td>
+                    <td>@Html.DisplayFor(model => model.CreateDate)</td>
+                </tr>
+                <tr>
+                    <td><b>End Date:</b></td>
+                    <td>@Html.DisplayFor(model => model.FinishDate)</td>
+                </tr>
+                <tr>
+                    <td><b>Time:</b>@Html.DisplayFor(model => model.TimetoRead)</td>
+                </tr>
+                <tr>
+                    <td><b>Active:</b>@Html.DisplayFor(model => model.Active)</>
                 </tr>
             </table>
         </div>

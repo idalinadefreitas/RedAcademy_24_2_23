@@ -73,7 +73,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
 
         [ClaimsAuthorize("Assessment", "Detail")]
         [HttpGet]
-        [Route("Detail")]
+        [Route("Detail-Assessment")]
         public IActionResult Detail(Guid id)
         {
             var assessment = _context.Assessments.FirstOrDefault(f => f.Id == id);

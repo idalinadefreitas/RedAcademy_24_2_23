@@ -1,3 +1,4 @@
+#region Builder Configuration 
 using Microsoft.EntityFrameworkCore;
 using RedAcademy_task_2.Data;
 using Microsoft.AspNetCore.Identity;
@@ -17,13 +18,19 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<AppIdentityContext>();
 
 builder.Services.AddRazorPages();
-var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+#endregion
+
+#region Configure Services 
+builder.Services.AddRazorPages();
+var app = builder.Build();
+#endregion
+
+
+#region Configure Pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -42,3 +49,5 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+#endregion
+

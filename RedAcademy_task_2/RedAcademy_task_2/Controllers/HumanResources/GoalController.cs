@@ -86,7 +86,7 @@ namespace RedAcademy_task_2.Controllers.HumanResources
 
         [ClaimsAuthorize("Goal", "Detail")]
         [HttpGet]
-        [Route("Detail")]
+        [Route("Detail-Goal")]
         public IActionResult Detail(Guid id)
         {
             var goal = _context.Goals.FirstOrDefault(f => f.Id == id);

@@ -30,6 +30,7 @@ namespace RedAcademy_task_2.Controllers
 
         }
 
+        [ClaimsAuthorize("Marketing", "Add")]
         [HttpGet]
         [Route("Add-marketing")]
         public IActionResult Add()
@@ -56,6 +57,7 @@ namespace RedAcademy_task_2.Controllers
 
         }
 
+        [ClaimsAuthorize("Marketing", "Detail")]
         [HttpGet]
         [Route("Detail-marketing")]
         public IActionResult Detail(Guid id)
@@ -68,6 +70,7 @@ namespace RedAcademy_task_2.Controllers
             return View(marketing);
         }
 
+        [ClaimsAuthorize("Marketing", "Edit")]
         [Route("edit-marketing/{id:guid}")]
         [HttpGet]
         public IActionResult Edit(Guid id)
